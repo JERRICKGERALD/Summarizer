@@ -20,7 +20,14 @@ def get_requirements(file_path):
     return requirements
 
 
+    '''
+    Setup below is an inbuilt function 
+    The below code takes the parameters
+    like auother, version, email address,
+    packages, and install_requirements that takes function with 
+    reuqirements.txt file
 
+    ''' 
 setup(
     name='mlproject',
     version='0.0.1',
