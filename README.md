@@ -12,7 +12,7 @@
 
 ##### GIT COMMAND: ('git status') -> ('git add .') -> ('git commit -m "first commit"') -> ('git push -u origin master')
 
-#### Create setup file, requirements.txt and src folder, inside src create __init__.py 
+Create setup file, requirements.txt and src folder, inside src create __init__.py 
 
 #### Check setup file and requirements.txt
 
