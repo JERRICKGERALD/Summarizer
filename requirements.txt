@@ -7,4 +7,5 @@ scipy
 statsmodels
 xgboost
 lightgbm
--e .
+catboost
+#-e .
