@@ -14,6 +14,7 @@ from catboost import CatBoostRegressor
 from sklearn.tree import DecisionTreeRegressor
 from xgboost import XGBRegressor
 from sklearn.metrics import r2_score
+from sklearn.model_selection import GridSearchCV
 
 @dataclass
 class ModelTrainerConfig:
@@ -47,7 +48,35 @@ class Modeltrainer:
                     "XGBoost Regressor": XGBRegressor(),
                     "CatBoost Regressor": CatBoostRegressor(verbose=False),
             }
-            
+            '''
+            Hyper Parameter
+            #params = {
+
+                    #"RandomForest": {
+                     #   'n_estimators': [8,16,32,64,128,256],
+                      #  'criterion': ['squared_error', 'friedman_mse'],
+                       # 'max_features': ['sqrt','log2'],
+                    #},
+                    #"Linear Regression": {
+                        'normalize': [True, False]
+                    },
+                    "Decision Tree": {
+                        'criterion': ['squared_error'],
+                        'splitter': ['best','random'],
+                    },
+                    'XGBoost Regressor': {
+                        'learning_rate': [0.1,0.01,0.001],
+                        'n_estimators': [8,16,32,64,128,256],
+
+                    },
+                    'catboost regressor': {
+                        'depth': [6,8,10],
+                        'learning_rate': [0.1,0.01,0.001],
+                        'iterations': [30,50,100],
+                    }
+
+            }
+            '''
             model_report:dict = evaluate_model(X_train = X_train, X_test = X_test, y_train = y_train, y_test= y_test,models = models)
 
             best_model_score = max(sorted(model_report.values()))

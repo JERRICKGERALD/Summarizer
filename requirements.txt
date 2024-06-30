@@ -8,5 +8,6 @@ statsmodels
 xgboost
 lightgbm
 catboost
-dil
+dill
+flask
 #-e .
