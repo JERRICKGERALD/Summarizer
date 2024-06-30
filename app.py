@@ -38,8 +38,8 @@ def predict_datapoint():
         pred_df = data.get_data_as_df()
         print(pred_df)
 
-        predict_p = pred_df.PredictPipeline()
-        result = predict_p.predict(pred_df)
+        predict_p = PredictPipeline()
+        results = predict_p.predict(pred_df)
         return render_template('home.html',results = results[0])
     
 

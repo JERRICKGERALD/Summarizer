@@ -18,9 +18,9 @@ class PredictPipeline:
             preprocessor_path = 'artifacts\preprocessor.pkl'
             model = load_object(file_path = model_path)
             preprocessor = load_object(file_path = preprocessor_path) # Import the pkl file
-            data_scaled = preprocesser.transform(features)
+            data_scaled = preprocessor.transform(features)
             preds = model.predict(data_scaled)
-            return pred
+            return preds
 
         except Exception as e:
             
@@ -55,7 +55,7 @@ class CustomData:
 
         except Exception as e:
             raise CustomException(e,sys)
-            
+
         return pd.DataFrame(custom_data_input_dict)
 
 
